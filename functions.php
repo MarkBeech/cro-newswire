@@ -6,4 +6,5 @@ function theme_enqueue_styles() {
         array('parent-style')
     );
 }
+remove_filter('term_description','wpautop');
 ?>
