@@ -1,11 +1,18 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<div class="tldr">
+<a href="/">Crocels News</a> - /<?php
+if (in_category(441)) {echo('featured news');} //had to use cat numbers
+else if(in_category(85)) {echo('newswire');}   //instead of cat slugs
+else if (in_category(196)) {echo('news release');} 
+else { echo('news');} ?>/ - <strong>Swansea, Wales, 
+<?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?></strong> - <?php
+echo (the_excerpt());?>
+</div><br/>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
-		
 	</header><!-- .entry-header -->
-
 	<div class="entry-content post-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'newswire' ), 'after' => '</div>' ) ); ?>
